@@ -70,10 +70,10 @@ before_build:
       cd build
   - ps: $env:matio_dir='C:\conda\Library\'
   - ps: $env:CMAKE_PREFIX_PATH='C:\conda\Library\cmake'
-  - cmake -G "Visual Studio 14 2015 Win64" ..
+  - cmake -G "NMake Makefiles" ..
 
 build_script:
-  - cmake --build . --config %CONFIGURATION%
+  - nmake VERBOSE=1
 
 test_script:
   - call %APPVEYOR_BUILD_FOLDER%\build\%CONFIGURATION%\hello.exe
