@@ -60,6 +60,9 @@ install:
   - conda config --add channels conda-forge
   - conda install libmatio
 
+  # fix PATH to have dumpbin
+  - set PATH=%PATH%;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin
+
 before_build:
   - cd %APPVEYOR_BUILD_FOLDER%
   - ps: |
