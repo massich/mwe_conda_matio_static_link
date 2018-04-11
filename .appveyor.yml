@@ -79,6 +79,8 @@ test_script:
   - depends.exe /f:1 /c /oc:c:\projects\depends.txt %APPVEYOR_BUILD_FOLDER%\build\%CONFIGURATION%\hello.exe
   - appveyor PushArtifact C:\projects\depends.txt
 
+  - dumpbin /dependents %APPVEYOR_BUILD_FOLDER%\build\%CONFIGURATION%\hello.exe
+
 deploy: off
 
 # on_finish:
