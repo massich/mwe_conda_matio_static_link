@@ -1,0 +1,11 @@
+language:
+  - cpp
+
+os:
+  - linux  # shipping linux
+
+script:
+  - echo "TRAVIS OK"
+
+notifications:
+  email: false
