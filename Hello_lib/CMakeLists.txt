@@ -1,4 +1,4 @@
-add_library(Hello_lib
+add_library(Hello_lib SHARED
   Speaker.h
   Speaker.cpp)
 
