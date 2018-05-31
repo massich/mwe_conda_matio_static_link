@@ -9,6 +9,9 @@ using namespace Hello;
 
 namespace Hello {
   void Speaker::sayHello() {
-    std::cout << "Hello, world! MAT_FT_MAT73 is " << mat_ft::MAT_FT_MAT73 << std::endl;
+      int major, minor, release;
+      Mat_GetLibraryVersion(&major, &minor, &release);
+      std::cout << "Hello, world! Using MATIO " << major << "." << minor << "." << release << std::endl;
+      std::cout << "Hello, world! MAT_FT_MAT73 is " << mat_ft::MAT_FT_MAT73 << std::endl;
   }
 }
