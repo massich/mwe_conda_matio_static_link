@@ -8,17 +8,17 @@ env:
   global:
     - PYTHON_VERSION=3.6
 
-before_install:
+install:
   - git clone https://github.com/astropy/ci-helpers.git
   - source ci-helpers/travis/setup_conda.sh
   - conda install -c conda-forge cmake
   - conda install -c massich matio-cmake
-
-script:
   - cd ${TRAVIS_BUILD_DIR}
   - mkdir -p build && cd build
   - cmake .. 
   - cmake --build . -- -j 2
+
+script:
   - ctest -v .
 
 notifications:
