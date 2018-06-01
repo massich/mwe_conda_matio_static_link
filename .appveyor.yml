@@ -58,7 +58,7 @@ install:
   # Install Conda
   ############################################################################
   - conda config --add channels conda-forge
-  - conda install libmatio
+  - conda install -c massich matio-cmake
 
   # fix PATH to have dumpbin
   - set PATH=%PATH%;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin
