@@ -4,8 +4,22 @@ language:
 os:
   - linux  # shipping linux
 
+env:
+  global:
+    - PYTHON_VERSION=3.6
+
+install:
+  - git clone https://github.com/astropy/ci-helpers.git
+  - source ci-helpers/travis/setup_conda.sh
+  - conda install -c conda-forge cmake
+  - conda install -c massich matio-cmake
+  - cd ${TRAVIS_BUILD_DIR}
+  - mkdir -p build && cd build
+  - cmake .. 
+  - cmake --build . -- -j 2
+
 script:
-  - echo "TRAVIS OK"
+  - ctest -v .
 
 notifications:
   email: false
