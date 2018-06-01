@@ -76,7 +76,8 @@ build_script:
   - cmake --build . --config %CONFIGURATION%
 
 test_script:
-  - call %APPVEYOR_BUILD_FOLDER%\build\%CONFIGURATION%\hello.exe
+  - dir %APPVEYOR_BUILD_FOLDER%\build\%CONFIGURATION%\
+  # - call %APPVEYOR_BUILD_FOLDER%\build\%CONFIGURATION%\hello.exe
 
   # Check dependencies
   - depends.exe /f:1 /c /oc:c:\projects\depends.txt %APPVEYOR_BUILD_FOLDER%\build\%CONFIGURATION%\hello.exe
