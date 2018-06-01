@@ -77,7 +77,7 @@ build_script:
 
 test_script:
   - dir %APPVEYOR_BUILD_FOLDER%\build\%CONFIGURATION%\
-  - call %APPVEYOR_BUILD_FOLDER%\build\%CONFIGURATION%\hello.exe
+  # - call %APPVEYOR_BUILD_FOLDER%\build\%CONFIGURATION%\hello.exe
 
   # Check dependencies
   - depends.exe /f:1 /c /oc:c:\projects\depends.txt %APPVEYOR_BUILD_FOLDER%\build\%CONFIGURATION%\hello.exe
