@@ -19,7 +19,8 @@ script:
   - mkdir -p build && cd build
   - cmake .. 
   - cmake --build . -- -j 2
-  - ctest -v .
+  - ldd hello
+  - ./hello
 
 notifications:
   email: false
