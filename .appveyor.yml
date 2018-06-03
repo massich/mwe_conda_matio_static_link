@@ -71,7 +71,8 @@ before_build:
   - ps: $env:matio_dir='C:\conda\Library\'
   - ps: $env:CMAKE_PREFIX_PATH='C:\conda\Library\cmake'
   - dir C:\conda\Library\cmake
-  - cmake -G "Visual Studio 14 2015 Win64" -DCMAKE_PREFIX_PATH='C:\conda\Library\cmake' ..
+  - dir C:\conda\Library\lib\cmake
+  - cmake -G "Visual Studio 14 2015 Win64" -DCMAKE_PREFIX_PATH='C:\conda\Library\lib\cmake' ..
 
 build_script:
   - cmake --build . --config %CONFIGURATION%
