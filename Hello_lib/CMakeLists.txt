@@ -7,7 +7,8 @@ target_include_directories(Hello_lib
   INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
   )
 
-target_link_libraries(Hello_lib PUBLIC MATIO::MATIO)
+# target_link_libraries(Hello_lib PUBLIC MATIO::MATIO)
+target_link_libraries(Hello_lib PUBLIC matio)
 
 add_library(Hello_lib::Hello_lib ALIAS Hello_lib)
 
