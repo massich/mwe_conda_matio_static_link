@@ -17,6 +17,7 @@ before_install:
 script:
   - cd ${TRAVIS_BUILD_DIR}
   - mkdir -p build && cd build
+  - ls /home/travis/miniconda/envs/test/lib/cmake/
   - cmake .. -DCMAKE_PREFIX_PATH=/home/travis/miniconda/envs/test/lib/cmake/
   - cmake --build . -- -j 2
   - ldd hello
