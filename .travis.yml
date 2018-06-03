@@ -4,8 +4,24 @@ language:
 os:
   - linux  # shipping linux
 
+env:
+  global:
+    - PYTHON_VERSION=3.6
+
+before_install:
+  - git clone https://github.com/astropy/ci-helpers.git
+  - source ci-helpers/travis/setup_conda.sh
+  - conda install -c conda-forge cmake
+  - conda install -c massich matio-cmake
+
 script:
-  - echo "TRAVIS OK"
+  - cd ${TRAVIS_BUILD_DIR}
+  - mkdir -p build && cd build
+  - ls /home/travis/miniconda/envs/test/lib/cmake/
+  - cmake .. -DCMAKE_PREFIX_PATH=/home/travis/miniconda/envs/test/lib/cmake/
+  - cmake --build . -- -j 2
+  - ldd hello
+  - ./hello
 
 notifications:
   email: false

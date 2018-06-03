@@ -3,9 +3,9 @@ project (CMakeHelloWorld VERSION 1.0)
 set (CMAKE_CXX_STANDARD 11)
 
 # Find the BLAS stuff
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+# list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-#set(MATIO_USE_STATIC_LIBRARIES TRUE) # XXX This should be an option
+set(MATIO_USE_STATIC_LIBRARIES TRUE) # XXX This should be an option
 find_package(matio REQUIRED)
 
 # include the subdirectory containing our libs
